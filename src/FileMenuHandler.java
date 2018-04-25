@@ -13,9 +13,9 @@ public class FileMenuHandler implements ActionListener {
 	}
 	
 	public static StringTokenizer myTokens;
-	public static PlayerList list = new PlayerList();
-	public static PlayerList fielder = new PlayerList();
-	public static PlayerList pitcher = new PlayerList();
+	public static UserList list = new UserList();
+	public static UserList fielder = new UserList();
+	public static UserList pitcher = new UserList();
 	
 	public void actionPerformed(ActionEvent event) {
 		String  menuName;
@@ -108,12 +108,12 @@ public class FileMenuHandler implements ActionListener {
 					Float e = Float.parseFloat(myTokens.nextToken());
 					float f = Float.parseFloat(myTokens.nextToken()); 
 					try{
-						Pitcher p = new Pitcher(b,c,d,e,f);
+						Musrif p = new Musrif(b,c,d,e,f);
 						list.insertPlayer(p);
-						Pitcher pSorted = new Pitcher(b,c,d,e,f);
+						Musrif pSorted = new Musrif(b,c,d,e,f);
 						pitcher.insertPlayer(pSorted);
 					}
-					catch (IllegalPlayerException ipe){
+					catch (IllegalUserException ipe){
 						System.out.println(line);
 					}
 				}//if close
@@ -124,12 +124,12 @@ public class FileMenuHandler implements ActionListener {
 					String d = myTokens.nextToken();
 					Float e = Float.parseFloat(myTokens.nextToken());
 					try{
-						Fielder f = new Fielder(b,c,d,e);
+						Mahasantri f = new Mahasantri(b,c,d,e);
 						list.insertPlayer(f);
-						Fielder fSorted = new Fielder(b,c,d,e);
+						Mahasantri fSorted = new Mahasantri(b,c,d,e);
 						fielder.insertPlayer(fSorted);
 					}
-					catch (IllegalPlayerException ipe){
+					catch (IllegalUserException ipe){
 						System.out.println(line);
 					}
 				}//if close

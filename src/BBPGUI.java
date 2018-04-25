@@ -50,19 +50,19 @@ public class BBPGUI extends JFrame{
 		JMenu       fileMenu = new JMenu("Display");
 		DisplayMenuHandler fmh  = new DisplayMenuHandler(this);
 
-		item = new JMenuItem("All");    //All...
+		item = new JMenuItem("User terakhir aktif");    //All...
 		item.addActionListener( fmh );
 		fileMenu.add( item );
 
 		fileMenu.addSeparator();           //add a horizontal separator line
 	
-		item = new JMenuItem("Fielders");       //Fielders
+		item = new JMenuItem("Mahasantri");       //Fielders
 		item.addActionListener( fmh );
 		fileMenu.add( item );
 		
 		fileMenu.addSeparator();           //add a horizontal separator line
 		
-		item = new JMenuItem("Pitchers");       //Pitchers
+		item = new JMenuItem("Musrif");       //Pitchers
 		item.addActionListener( fmh );
 		fileMenu.add( item );
 

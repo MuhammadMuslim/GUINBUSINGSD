@@ -1,21 +1,8 @@
-// LinkedList.java
-// 
-// This version uses three instance variables,
-// a pointer to the first node, a pointer to
-// the last node, and length, to make our
-// append and getLength methods more efficient
-// than the would be if our only instance
-// variable were a pointer to the first node.
-//
-// This version uses a dummy first node.  Hence
-// it needs less decision-making than it would
-// need if a dummy first node were not used.
-//
 
 /**
  * Encapsulates a linked list of <code>String</code>.
  */
-public class PlayerList  {
+public class UserList  {
 
 /**  First node in linked list - dummy node  */
    private PlayerNode first = new PlayerNode(null);
@@ -52,7 +39,7 @@ public class PlayerList  {
 
    
    
-   public void append(BaseballPlayer d)
+   public void append(User d)
    {
 
      //  write the code here for append
@@ -69,7 +56,7 @@ public class PlayerList  {
     *
     * @param data the data element to be prepended.
     */
-   public void prepend(BaseballPlayer d)
+   public void prepend(User d)
    {
 	   PlayerNode toPrepend=new PlayerNode(d);
 	   if(first==last){
@@ -90,7 +77,7 @@ public class PlayerList  {
     * Inserts player into correct alphabetical order in the list.
     * @param d Player to be inserted.
     */
-   public void insertPlayer(BaseballPlayer d){
+   public void insertPlayer(User d){
 	   PlayerNode f = first; 
 		while (f.next != null && ((f.next).data).compareTo(d) < 0) 
 			f = f.next;
@@ -135,11 +122,11 @@ public class PlayerList  {
    {
       if ( other == null 
               || getClass() != other.getClass()
-              || length != ((PlayerList) other).length )
+              || length != ((UserList) other).length )
           return false;
 
       PlayerNode nodeThis = first;
-      PlayerNode nodeOther = ((PlayerList) other).first;
+      PlayerNode nodeOther = ((UserList) other).first;
       while ( nodeThis != null )
       {
           // Since the two linked lists are the same length,

@@ -2,16 +2,16 @@
 
 class PlayerNode
 {
-   BaseballPlayer data;
+   User data;
    PlayerNode next;
 
-   PlayerNode(BaseballPlayer d)
+   PlayerNode(User d)
    {
       data = d;
       next = null;
    }  // constructor
    
-   public PlayerNode(BaseballPlayer d, PlayerNode n){
+   public PlayerNode(User d, PlayerNode n){
 		data = d;
 		next = n;
 		

@@ -23,11 +23,11 @@ public class DisplayMenuHandler implements ActionListener{
 			BBPGUI.players.setText(FileMenuHandler.list.toString());
 		}
 	
-		if (menuName.equals("Fielders")){
+		if (menuName.equals("Mahasantri")){
 			BBPGUI.players.setText(FileMenuHandler.fielder.toString());
 		}
 		
-		if(menuName.equals("Pitchers")){
+		if(menuName.equals("Musrif")){
 			BBPGUI.players.setText(FileMenuHandler.pitcher.toString());
 		}
 		
