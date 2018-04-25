@@ -1,7 +1,5 @@
-package javaapplication4;
 
-
-public class Musrif extends User{
+public class Pitcher extends BaseballPlayer{
 	
 	protected float ERA;
 
@@ -13,10 +11,10 @@ public class Musrif extends User{
  * @param average  Player's average.
  * @param e  Player's ERA.
  */
-	public Musrif(int number, String lastName, String firstName, float average, float e){
+	public Pitcher(int number, String lastName, String firstName, float average, float e){
 		super(number,lastName,firstName,average);
-		if(number<0 || number>99) throw new IllegalUserrException("Number must be from 1 to 100.");
-		if(average<=0 || average>=1) throw new IllegalUserrException("Average must be between 0 and 1.");
+		if(number<0 || number>99) throw new IllegalPlayerException("Number must be from 1 to 100.");
+		if(average<=0 || average>=1) throw new IllegalPlayerException("Average must be between 0 and 1.");
 		ERA = e;
 	}
 	
@@ -29,7 +27,7 @@ public class Musrif extends User{
 	}
 
 /**
- * Takes a Musrif and returns its parameters as a string.
+ * Takes a Pitcher and returns its parameters as a string.
  */
 	public String toString(){
 		String info = number + "   " + lastName + ", " + firstName + "  " + average + "  " + ERA + "\n";

@@ -1,5 +1,3 @@
-package javaapplication4;
-
 // LinkedList.java
 // 
 // This version uses three instance variables,
@@ -17,13 +15,13 @@ package javaapplication4;
 /**
  * Encapsulates a linked list of <code>String</code>.
  */
-public class UserList  {
+public class PlayerList  {
 
 /**  First node in linked list - dummy node  */
-   private UserNode first = new UserNode(null);
+   private PlayerNode first = new PlayerNode(null);
    //private
 /**  Last node in linked list  */
-   private UserNode last = first;
+   private PlayerNode last = first;
 
 /**  Number of data items in the list.  */
    private int length = 0;
@@ -35,7 +33,7 @@ public class UserList  {
     * @return the number of elements in the list.
     */
 
-   public UserNode getFirst(){
+   public PlayerNode getFirst(){
 	   return first;
 	   
    }
@@ -54,11 +52,11 @@ public class UserList  {
 
    
    
-   public void append(User d)
+   public void append(BaseballPlayer d)
    {
 
      //  write the code here for append
-	   UserNode toAppend=new UserNode(d);
+	   PlayerNode toAppend=new PlayerNode(d);
 	   last.next=toAppend;
 	   last=toAppend;
 	   length++;
@@ -71,9 +69,9 @@ public class UserList  {
     *
     * @param data the data element to be prepended.
     */
-   public void prepend(User d)
+   public void prepend(BaseballPlayer d)
    {
-	   UserNode toPrepend=new UserNode(d);
+	   PlayerNode toPrepend=new PlayerNode(d);
 	   if(first==last){
 		   last.next=toPrepend;
 		   last=toPrepend; 
@@ -92,11 +90,11 @@ public class UserList  {
     * Inserts player into correct alphabetical order in the list.
     * @param d Player to be inserted.
     */
-   public void insertPlayer(User d){
-	   UserNode f = first; 
-		while (f.next != null && ((f.next).data).compareTo(d) < 0)
+   public void insertPlayer(BaseballPlayer d){
+	   PlayerNode f = first; 
+		while (f.next != null && ((f.next).data).compareTo(d) < 0) 
 			f = f.next;
-		UserNode n = new UserNode(d, f.next);
+		PlayerNode n = new PlayerNode(d, f.next);
 		f.next = n; 
 		
    }
@@ -106,7 +104,7 @@ public class UserList  {
    *
    */
    public String toString() {
-      UserNode p = first.next;
+      PlayerNode p = first.next;
       String returnString = "";
       while (p != null) {
          returnString += p.data+" ";
@@ -137,11 +135,11 @@ public class UserList  {
    {
       if ( other == null 
               || getClass() != other.getClass()
-              || length != ((UserList) other).length )
+              || length != ((PlayerList) other).length )
           return false;
 
-      UserNode nodeThis = first;
-      UserNode nodeOther = ((UserList) other).first;
+      PlayerNode nodeThis = first;
+      PlayerNode nodeOther = ((PlayerList) other).first;
       while ( nodeThis != null )
       {
           // Since the two linked lists are the same length,

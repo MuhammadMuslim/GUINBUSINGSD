@@ -1,6 +1,3 @@
-package javaapplication4;
-
-import javaapplication4.FileMenuHandler;
 import javax.swing.*;
 
 import java.awt.*;

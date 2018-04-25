@@ -1,5 +1,3 @@
-package javaapplication4;
-
 import javax.swing.*;
 
 import java.awt.*;
@@ -15,9 +13,9 @@ public class FileMenuHandler implements ActionListener {
 	}
 	
 	public static StringTokenizer myTokens;
-	public static UserList list = new UserList();
-	public static UserList fielder = new UserList();
-	public static UserList pitcher = new UserList();
+	public static PlayerList list = new PlayerList();
+	public static PlayerList fielder = new PlayerList();
+	public static PlayerList pitcher = new PlayerList();
 	
 	public void actionPerformed(ActionEvent event) {
 		String  menuName;
@@ -110,12 +108,12 @@ public class FileMenuHandler implements ActionListener {
 					Float e = Float.parseFloat(myTokens.nextToken());
 					float f = Float.parseFloat(myTokens.nextToken()); 
 					try{
-						Musrif p = new Musrif(b,c,d,e,f);
+						Pitcher p = new Pitcher(b,c,d,e,f);
 						list.insertPlayer(p);
-						Musrif pSorted = new Musrif(b,c,d,e,f);
+						Pitcher pSorted = new Pitcher(b,c,d,e,f);
 						pitcher.insertPlayer(pSorted);
 					}
-					catch (IllegalUserrException ipe){
+					catch (IllegalPlayerException ipe){
 						System.out.println(line);
 					}
 				}//if close
@@ -126,12 +124,12 @@ public class FileMenuHandler implements ActionListener {
 					String d = myTokens.nextToken();
 					Float e = Float.parseFloat(myTokens.nextToken());
 					try{
-						Santri f = new Santri(b,c,d,e);
+						Fielder f = new Fielder(b,c,d,e);
 						list.insertPlayer(f);
-						Santri fSorted = new Santri(b,c,d,e);
+						Fielder fSorted = new Fielder(b,c,d,e);
 						fielder.insertPlayer(fSorted);
 					}
-					catch (IllegalUserrException ipe){
+					catch (IllegalPlayerException ipe){
 						System.out.println(line);
 					}
 				}//if close
